@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 using DarkUI.Forms;
 
 namespace IILab5
 {
     public partial class Form1 : DarkForm
     {
-        const double d = 0.99;
+        const double d = 1;
         const int MAX_POSIBALITY = 1000;
+        int switcher = 0;
         public Form1()
         {
             InitializeComponent();
@@ -98,6 +100,35 @@ namespace IILab5
             if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8)
             {
                 e.Handled = true;
+            }
+        }
+
+
+        void Copyraight(int i)
+        {
+            switch (i)
+            {
+                case 0:
+                    MessageBox.Show("Created and Development by AK. И не нажимай больше эту кнопку :)");
+                    break;
+                case 1:
+                    MessageBox.Show("Created and Development by AK. Оставь надежду всяк сюда входящий ");
+                    break;
+                default:
+                    MessageBox.Show("Press F to Pay Respects");
+                    Process.Start("biba.exe");
+                    Process.Start("boba.exe");
+                    break;
+            }
+
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F11)
+            {
+                Copyraight(switcher);
+                switcher++;
             }
         }
     }

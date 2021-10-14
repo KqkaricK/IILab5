@@ -158,8 +158,10 @@ namespace IILab5
             this.Controls.Add(this.darkLabel1);
             this.Controls.Add(this.darkTextBox1);
             this.Controls.Add(this.darkButton1);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "iIILab5";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
