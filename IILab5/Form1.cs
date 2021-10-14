@@ -105,7 +105,7 @@ namespace IILab5
 
         void Copyraight()
         {
-            MessageBox.Show("Created and Development by AK.);
+            MessageBox.Show("Created and Development by AK.");
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
