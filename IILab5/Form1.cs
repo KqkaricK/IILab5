@@ -14,9 +14,8 @@ namespace IILab5
 {
     public partial class Form1 : DarkForm
     {
-        const double d = 1;
+        double d = 1;
         const int MAX_POSIBALITY = 1000;
-        int switcher = 0;
         public Form1()
         {
             InitializeComponent();
@@ -76,6 +75,8 @@ namespace IILab5
 
         private void darkButton1_Click(object sender, EventArgs e)
         {
+            if (t_d.Text != "")
+                d = Convert.ToDouble(t_d.Text);
             chart1.Series[0].Points.Clear();
             if (darkRadioButton1.Checked == true)
             {
@@ -104,31 +105,16 @@ namespace IILab5
         }
 
 
-        void Copyraight(int i)
+        void Copyraight()
         {
-            switch (i)
-            {
-                case 0:
-                    MessageBox.Show("Created and Development by AK. И не нажимай больше эту кнопку :)");
-                    break;
-                case 1:
-                    MessageBox.Show("Created and Development by AK. Оставь надежду всяк сюда входящий ");
-                    break;
-                default:
-                    MessageBox.Show("Press F to Pay Respects");
-                    Process.Start("biba.exe");
-                    Process.Start("boba.exe");
-                    break;
-            }
-
+            MessageBox.Show("Created and Development by AK.");
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F11)
             {
-                Copyraight(switcher);
-                switcher++;
+                Copyraight();
             }
         }
     }
